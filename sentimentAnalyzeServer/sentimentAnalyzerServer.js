@@ -1,6 +1,7 @@
 const express = require('express');
 const app = new express();
 
+
 /*This tells the server to use the client 
 folder for all static resources*/
 app.use(express.static('client'));
@@ -28,9 +29,9 @@ function getNLUInstance() {
     const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
         version: '2021-08-01',
         authenticator: new IamAuthenticator ({
-            apikey: api_key
+            apikey: API_KEY
         }),
-        serviceUrl: api_url
+        serviceUrl: API_URL
     });
     return naturalLanguageUnderstanding;
 }
